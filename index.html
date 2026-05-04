@@ -227,7 +227,9 @@
     </div>
 
     <div class="section-header">📌 Informasi Publik</div>
+    
     <div class="card-stack">
+        <!-- Akordion tetap sama sesuai permintaan -->
         <div class="acc-card" id="potensi-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Potensi (UMKM & Budaya)</span><i class="fas fa-chevron-right"></i>
@@ -238,6 +240,7 @@
                 <p><strong>🎭 Budaya:</strong> Sanggar Seni, Kelompok Karawitan.</p>
             </div>
         </div>
+
         <div class="acc-card" id="posyandu-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Jadwal Posyandu ILP</span><i class="fas fa-chevron-right"></i>
@@ -246,14 +249,36 @@
                 <p>Integrasi Layanan Primer (ILP) di 6 Standar Pelayanan Minimal (SPM): Ibu Hamil, Balita, Remaja, Dewasa, dan Lansia.</p>
             </div>
         </div>
+
+        <div class="acc-card" id="event-acc">
+            <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
+                <span>Kalender Event</span><i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="acc-body">
+                <p>Kegiatan terdekat: Kerja Bakti Serentak, Lomba Kebersihan RW, Rapat Pleno Kelurahan.</p>
+            </div>
+        </div>
+
         <div class="acc-card" id="pamong-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Profil Pamong</span><i class="fas fa-chevron-right"></i>
             </div>
             <div class="acc-body">
-                <p><strong>Lurah:</strong> M. Sumaryanto, S.Si<br><strong>Bendahara:</strong> Wartono, S.E<br><strong>Sekretaris:</strong> Hermanto (Herman)</p>
+                <p><strong>Lurah:</strong> M. Sumaryanto, S.Si</p>
+                <p><strong>Bendahara:</strong> Wartono, S.E</p>
+                <p><strong>Sekretaris Kelurahan:</strong> Hermanto (Herman)</p>
             </div>
         </div>
+
+        <div class="acc-card" id="rtrw-acc">
+            <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
+                <span>Data RT & RW</span><i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="acc-body">
+                <p>Akses daftar pengurus RT dan RW di wilayah Kelurahan Serengan terbaru.</p>
+            </div>
+        </div>
+
         <div class="acc-card" id="anggaran-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Transparansi Anggaran</span><i class="fas fa-chevron-right"></i>
@@ -262,8 +287,25 @@
                 <p>Informasi realisasi Dana Kelurahan dan Anggaran Pembangunan 2026.</p>
             </div>
         </div>
-    </div>
 
+        <div class="acc-card" id="gedung-acc">
+            <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
+                <span>Sewa Gedung Pertemuan</span><i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="acc-body">
+                <p>Cek jadwal ketersediaan dan prosedur peminjaman gedung pertemuan warga.</p>
+            </div>
+        </div>
+
+        <div class="acc-card" id="lampid-acc">
+            <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
+                <span>Informasi LAMPID</span><i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="acc-body">
+                <p>Laporan Lahir, Mati, Pindah, dan Datang untuk validasi kependudukan harian.</p>
+            </div>
+        </div>
+    </div>
     <footer><p>S.E.R.E.N.A <br> Kelurahan Serengan, Surakarta <br> © 2026 — Developed by Herman</p></footer>
 
     <div id="backToTop" class="back-to-top" onclick="scrollToTop()"><i class="fas fa-rocket"></i>TOP</div>
