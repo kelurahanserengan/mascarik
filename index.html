@@ -16,7 +16,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg); padding-bottom: 30px; background-image: radial-gradient(circle, #d1d1d1 1px, transparent 1px); background-size: 25px 25px; }
+        body { background-color: var(--bg); padding-bottom: 0px; background-image: radial-gradient(circle, #d1d1d1 1px, transparent 1px); background-size: 25px 25px; }
 
         .app-container { 
             max-width: 480px; 
@@ -27,6 +27,8 @@
             box-shadow: 15px 15px 0px rgba(0,0,0,0.1); 
             position: relative; 
             transition: max-width 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
         }
 
         /* --- HEADER --- */
@@ -36,7 +38,7 @@
         header h1 { font-size: 2rem; font-weight: 800; line-height: 0.9; letter-spacing: -1px; color: white; text-shadow: 2px 2px 0px var(--dark); }
         header p { font-size: 0.75rem; margin-top: 8px; font-weight: 700; line-height: 1.2; color: white; text-transform: uppercase; opacity: 0.9; }
 
-        /* --- SLIDER SYSTEM (Disesuaikan untuk 6 Slide) --- */
+        /* --- SLIDER SYSTEM (6 Slide) --- */
         .slider-container {
             width: 100%;
             height: 280px;
@@ -47,7 +49,7 @@
         }
         .slider-wrapper {
             display: flex;
-            width: 600%; /* Disesuaikan ke 600% untuk 6 slide agar tidak terbagi dua */
+            width: 600%; 
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
         }
@@ -102,15 +104,27 @@
         .acc-card.active { box-shadow: 6px 6px 0px var(--dark); }
         .acc-card.active .acc-body { max-height: 800px; padding: 18px; border-top: 3px solid var(--dark); }
 
-        /* --- CONTACT FAB (Kanan) --- */
+        /* --- CONTACT FAB --- */
         .fab-container { position: fixed; bottom: 25px; right: 25px; z-index: 999; display: flex; flex-direction: column-reverse; align-items: center; gap: 12px; }
         .fab-main { background: var(--primary); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 4px solid var(--dark); box-shadow: 6px 6px 0px rgba(0,0,0,0.2); cursor: pointer; transition: 0.3s; }
         .fab-main.active { transform: rotate(45deg); background: var(--dark); }
         .fab-sub { width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; border: 3px solid var(--dark); box-shadow: 4px 4px 0px rgba(0,0,0,0.2); font-size: 1.2rem; text-decoration: none; transition: 0.3s; animation: fadeIn 0.3s forwards; }
 
-        /* --- BACK TO TOP ROCKET (Kiri) --- */
+        /* --- BACK TO TOP ROCKET --- */
         .back-to-top { position: fixed; bottom: 25px; left: 25px; background: var(--accent); color: var(--dark); border: 4px solid var(--dark); padding: 12px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; box-shadow: 4px 4px 0px var(--dark); display: none; cursor: pointer; z-index: 998; transition: 0.2s; text-align: center; width: 65px; line-height: 1; }
         .back-to-top i { display: block; font-size: 1.2rem; margin-bottom: 4px; }
+
+        /* --- FOOTER BERWARNA --- */
+        footer { 
+            padding: 40px 20px; 
+            text-align: center; 
+            background: linear-gradient(135deg, #7000FF 0%, #00E5FF 100%); 
+            border-top: 4px solid var(--dark); 
+            margin-top: auto; 
+            color: white;
+        }
+        footer p { font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; line-height: 1.5; }
+        footer .dev-tag { color: var(--accent); margin-top: 8px; display: block; font-size: 0.7rem; font-weight: 800; }
 
         /* --- MODAL --- */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; display: none; flex-direction: column; padding: 10px; }
@@ -120,9 +134,6 @@
         .modal-nav { background: var(--dark); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 800; }
         .close-btn { background: var(--primary); border: 2px solid white; color: white; padding: 4px 10px; cursor: pointer; }
         iframe { flex: 1; border: none; width: 100%; height: 100%; }
-
-        footer { padding: 40px 20px; text-align: center; background: #fff; border-top: 4px solid var(--dark); margin-top: 30px; }
-        footer p { font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dark); line-height: 1.5; }
 
         @media (min-width: 992px) {
             .app-container { max-width: 900px; }
@@ -145,7 +156,7 @@
         <p>Masyarakat Serengan Cerdas <br> Cari Informasi Kewilayahan</p>
     </header>
 
-    <!-- SLIDER SECTION (Lengkap 6 Slide) -->
+    <!-- SLIDER SECTION -->
     <div class="slider-container">
         <div class="slider-wrapper" id="sliderWrapper">
             <div class="slide" style="background-image: url('images/petaserengan.jpeg');">
@@ -167,7 +178,6 @@
                 <div class="slide-overlay">Potensi Budaya Wayang Kelurahan Serengan</div>
             </div>
         </div>
-        <!-- Dot navigasi disesuaikan menjadi 6 -->
         <div class="slider-dots" id="sliderDots">
             <div class="dot active" onclick="jumpToSlide(0)"></div>
             <div class="dot" onclick="jumpToSlide(1)"></div>
@@ -218,6 +228,7 @@
         </div>
     </div>
 
+    <!-- STATISTIK -->
     <div class="section-header">📶 Live Dashboard</div>
     <div class="stats-card">
         <div class="stats-grid">
@@ -226,10 +237,9 @@
         </div>
     </div>
 
+    <!-- INFORMASI PUBLIK -->
     <div class="section-header">📌 Informasi Publik</div>
-    
     <div class="card-stack">
-        <!-- Akordion tetap sama sesuai permintaan -->
         <div class="acc-card" id="potensi-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Potensi (UMKM & Budaya)</span><i class="fas fa-chevron-right"></i>
@@ -240,7 +250,6 @@
                 <p><strong>🎭 Budaya:</strong> Sanggar Seni, Kelompok Karawitan.</p>
             </div>
         </div>
-
         <div class="acc-card" id="posyandu-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Jadwal Posyandu ILP</span><i class="fas fa-chevron-right"></i>
@@ -249,7 +258,6 @@
                 <p>Integrasi Layanan Primer (ILP) di 6 Standar Pelayanan Minimal (SPM): Ibu Hamil, Balita, Remaja, Dewasa, dan Lansia.</p>
             </div>
         </div>
-
         <div class="acc-card" id="event-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Kalender Event</span><i class="fas fa-chevron-right"></i>
@@ -258,18 +266,14 @@
                 <p>Kegiatan terdekat: Kerja Bakti Serentak, Lomba Kebersihan RW, Rapat Pleno Kelurahan.</p>
             </div>
         </div>
-
         <div class="acc-card" id="pamong-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Profil Pamong</span><i class="fas fa-chevron-right"></i>
             </div>
             <div class="acc-body">
-                <p><strong>Lurah:</strong> M. Sumaryanto, S.Si</p>
-                <p><strong>Bendahara:</strong> Wartono, S.E</p>
-                <p><strong>Sekretaris Kelurahan:</strong> Hermanto (Herman)</p>
+                <p><strong>Lurah:</strong> M. Sumaryanto, S.Si<br><strong>Bendahara:</strong> Wartono, S.E<br><strong>Sekretaris:</strong> Hermanto (Herman)</p>
             </div>
         </div>
-
         <div class="acc-card" id="rtrw-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Data RT & RW</span><i class="fas fa-chevron-right"></i>
@@ -278,7 +282,6 @@
                 <p>Akses daftar pengurus RT dan RW di wilayah Kelurahan Serengan terbaru.</p>
             </div>
         </div>
-
         <div class="acc-card" id="anggaran-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Transparansi Anggaran</span><i class="fas fa-chevron-right"></i>
@@ -287,7 +290,6 @@
                 <p>Informasi realisasi Dana Kelurahan dan Anggaran Pembangunan 2026.</p>
             </div>
         </div>
-
         <div class="acc-card" id="gedung-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Sewa Gedung Pertemuan</span><i class="fas fa-chevron-right"></i>
@@ -296,7 +298,6 @@
                 <p>Cek jadwal ketersediaan dan prosedur peminjaman gedung pertemuan warga.</p>
             </div>
         </div>
-
         <div class="acc-card" id="lampid-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Informasi LAMPID</span><i class="fas fa-chevron-right"></i>
@@ -306,7 +307,12 @@
             </div>
         </div>
     </div>
-    <footer><p>S.E.R.E.N.A <br> Kelurahan Serengan, Surakarta <br> © 2026 — Developed by Herman</p></footer>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>S.E.R.E.N.A <br> Kelurahan Serengan, Surakarta <br> © 2026</p>
+        <span class="dev-tag">Developed by Herman</span>
+    </footer>
 
     <div id="backToTop" class="back-to-top" onclick="scrollToTop()"><i class="fas fa-rocket"></i>TOP</div>
 
@@ -336,7 +342,6 @@
     const wrapper = document.getElementById('sliderWrapper');
 
     function updateSlider() {
-        // Logika pembagian posisi translateX berdasarkan jumlah slide (100 / slides.length)
         wrapper.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
@@ -357,16 +362,13 @@
         const modal = document.getElementById('modal');
         const frame = document.getElementById('m-frame');
         const mTitle = document.getElementById('m-title');
-        
         frame.src = url;
         mTitle.innerText = title;
-        
         if (isFullscreen) {
             modal.classList.add('fullscreen');
         } else {
             modal.classList.remove('fullscreen');
         }
-        
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
