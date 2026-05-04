@@ -36,7 +36,7 @@
         header h1 { font-size: 2rem; font-weight: 800; line-height: 0.9; letter-spacing: -1px; color: white; text-shadow: 2px 2px 0px var(--dark); }
         header p { font-size: 0.75rem; margin-top: 8px; font-weight: 700; line-height: 1.2; color: white; text-transform: uppercase; opacity: 0.9; }
 
-        /* --- SLIDER SYSTEM --- */
+        /* --- SLIDER SYSTEM (Disesuaikan untuk 6 Slide) --- */
         .slider-container {
             width: 100%;
             height: 280px;
@@ -47,7 +47,7 @@
         }
         .slider-wrapper {
             display: flex;
-            width: 300%; 
+            width: 600%; /* Disesuaikan ke 600% untuk 6 slide agar tidak terbagi dua */
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
         }
@@ -112,7 +112,7 @@
         .back-to-top { position: fixed; bottom: 25px; left: 25px; background: var(--accent); color: var(--dark); border: 4px solid var(--dark); padding: 12px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; box-shadow: 4px 4px 0px var(--dark); display: none; cursor: pointer; z-index: 998; transition: 0.2s; text-align: center; width: 65px; line-height: 1; }
         .back-to-top i { display: block; font-size: 1.2rem; margin-bottom: 4px; }
 
-        /* --- MODAL (NORMAL & FULLSCREEN) --- */
+        /* --- MODAL --- */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; display: none; flex-direction: column; padding: 10px; }
         .modal.fullscreen { padding: 0; }
         .modal-content { border: 4px solid var(--dark); background: white; height: 100%; display: flex; flex-direction: column; box-shadow: 10px 10px 0px var(--primary); margin: 0 auto; width: 100%; }
@@ -145,41 +145,36 @@
         <p>Masyarakat Serengan Cerdas <br> Cari Informasi Kewilayahan</p>
     </header>
 
-    <!-- SLIDER SECTION -->
+    <!-- SLIDER SECTION (Lengkap 6 Slide) -->
     <div class="slider-container">
         <div class="slider-wrapper" id="sliderWrapper">
-
-            <!-- Slide 2: Peta Wilayah (Path diperbarui) -->
             <div class="slide" style="background-image: url('images/petaserengan.jpeg');">
                 <div class="slide-overlay">Peta Wilayah Kelurahan Serengan</div>
             </div>
-            <!-- Slide 1: Kantor Kelurahan (Path diperbarui) -->
             <div class="slide" style="background-image: url('images/kantor1.jpeg');">
                 <div class="slide-overlay">Kantor Kelurahan Serengan</div>
             </div>
-            <!-- Slide 1: Kantor Kelurahan (Path diperbarui) -->
             <div class="slide" style="background-image: url('images/pamong.jpeg');">
                 <div class="slide-overlay">Pamong Kelurahan Serengan</div>
             </div>
-            <!-- Slide 3: Info Event -->
             <div class="slide" style="background-image: url('images/gemaraya.jpeg');">
                 <div class="slide-overlay">Event Gemaraya Kelurahan Serengan</div>
             </div>
-            <!-- Slide 3: Info Potensi -->
             <div class="slide" style="background-image: url('images/potensigamelan.jpeg');">
                 <div class="slide-overlay">Potensi Budaya Gamelan Kelurahan Serengan</div>
             </div>
-            <!-- Slide 3: Info Potensi -->
             <div class="slide" style="background-image: url('images/potensipedalangan.jpeg');">
                 <div class="slide-overlay">Potensi Budaya Wayang Kelurahan Serengan</div>
             </div>
         </div>
+        <!-- Dot navigasi disesuaikan menjadi 6 -->
         <div class="slider-dots" id="sliderDots">
             <div class="dot active" onclick="jumpToSlide(0)"></div>
             <div class="dot" onclick="jumpToSlide(1)"></div>
             <div class="dot" onclick="jumpToSlide(2)"></div>
             <div class="dot" onclick="jumpToSlide(3)"></div>
             <div class="dot" onclick="jumpToSlide(4)"></div>
+            <div class="dot" onclick="jumpToSlide(5)"></div>
         </div>
     </div>
 
@@ -223,7 +218,6 @@
         </div>
     </div>
 
-    <!-- STATISTIK -->
     <div class="section-header">📶 Live Dashboard</div>
     <div class="stats-card">
         <div class="stats-grid">
@@ -232,7 +226,6 @@
         </div>
     </div>
 
-    <!-- INFORMASI PUBLIK -->
     <div class="section-header">📌 Informasi Publik</div>
     <div class="card-stack">
         <div class="acc-card" id="potensi-acc">
@@ -245,7 +238,6 @@
                 <p><strong>🎭 Budaya:</strong> Sanggar Seni, Kelompok Karawitan.</p>
             </div>
         </div>
-        <!-- Akordion lainnya tetap sama -->
         <div class="acc-card" id="posyandu-acc">
             <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
                 <span>Jadwal Posyandu ILP</span><i class="fas fa-chevron-right"></i>
@@ -274,20 +266,17 @@
 
     <footer><p>S.E.R.E.N.A <br> Kelurahan Serengan, Surakarta <br> © 2026 — Developed by Herman</p></footer>
 
-    <!-- Back to Top -->
     <div id="backToTop" class="back-to-top" onclick="scrollToTop()"><i class="fas fa-rocket"></i>TOP</div>
 
-    <!-- FAB -->
     <div class="fab-container">
         <div class="fab-main" onclick="toggleFab()"><i class="fas fa-headset"></i></div>
-        <a href="https://wa.me/628XXXXXXXXXX" class="fab-sub" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/62882003654359" class="fab-sub" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
         <a href="https://instagram.com/kelurahanserengan" class="fab-sub" style="background:#E1306C;"><i class="fab fa-instagram"></i></a>
-        <a href="tel:+62271XXXXXX" class="fab-sub" style="background:#007AFF;"><i class="fas fa-phone"></i></a>
-        <a href="mailto:kelurahan@serengan.com" class="fab-sub" style="background:#EA4335;"><i class="fab fa-envelope"></i></a>
+        <a href="tel:+62271643624" class="fab-sub" style="background:#007AFF;"><i class="fas fa-phone"></i></a>
+        <a href="mailto:kel-serengan@surakarta.go.id" class="fab-sub" style="background:#EA4335;"><i class="fab fa-envelope"></i></a>
     </div>
 </div>
 
-<!-- MODAL UI -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <div class="modal-nav">
@@ -305,7 +294,8 @@
     const wrapper = document.getElementById('sliderWrapper');
 
     function updateSlider() {
-        wrapper.style.transform = `translateX(-${currentSlide * 100 / slides.length}%)`;
+        // Logika pembagian posisi translateX berdasarkan jumlah slide (100 / slides.length)
+        wrapper.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
@@ -321,7 +311,6 @@
         updateSlider();
     }, 5000);
 
-    // Launch dengan opsi Fullscreen
     function launch(url, title, isFullscreen) {
         const modal = document.getElementById('modal');
         const frame = document.getElementById('m-frame');
