@@ -235,10 +235,16 @@
     <!-- STATISTIK -->
     <div class="section-header">📶 Live Dashboard</div>
     <div class="stats-card">
-        <div class="stats-grid">
-            <div><span class="stats-val">1,284</span><span class="stats-label">Kunjungan</span></div>
-            <div><span class="stats-val">42</span><span class="stats-label">Online</span></div>
+    <div class="stats-grid">
+        <div>
+            <span id="v-count" class="stats-val">...</span>
+            <span class="stats-label">Kunjungan</span>
         </div>
+        <div>
+            <span id="o-count" class="stats-val">...</span>
+            <span class="stats-label">Online</span>
+        </div>
+    </div>
     </div>
 
     <!-- INFORMASI PUBLIK -->
@@ -401,6 +407,26 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyLKXj9gzc9YnXFDyw1xm0cWrb-2OT178YlcXhPu_71q3zT0rs8dYy-gwcB8NPQqTJn/exec";
+
+    async function loadStats() {
+        try {
+            const response = await fetch(scriptURL);
+            const data = await response.json();
+            
+            document.getElementById('v-count').innerText = data.visits;
+            document.getElementById('o-count').innerText = data.online;
+        } catch (error) {
+            console.error("Gagal memuat statistik:", error);
+            // Fallback jika error
+            document.getElementById('v-count').innerText = "1.284";
+            document.getElementById('o-count').innerText = "1";
+        }
+    }
+
+    // Panggil saat halaman dibuka
+    loadStats();
 </script>
 
 </body>
