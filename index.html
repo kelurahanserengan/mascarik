@@ -197,7 +197,7 @@
         <div class="menu-item" onclick="launch('https://script.google.com/macros/s/AKfycbwfzl1RfogWJ3YK_bf-CsYJsGkjLIbOU6GRM0q-J1XJuO6e1lyLgMkO51kbFA7stNcD/exec', 'GIS SERENGAN', true)" style="background: var(--accent);">
             <i class="fas fa-map-location-dot"></i><span>Peta GIS</span>
         </div>
-        <div class="menu-item" onclick="launch('https://script.google.com/macros/s/AKfycbwMGELGuASNW5psE6kxgplFghh15uaiBojjixDpsdiJB_id6gTPhJyoVg0xbAg2NBBf/exec', 'STATISTIK', false)" style="background: var(--secondary);">
+        <div class="menu-item" onclick="launch('https://script.google.com/macros/s/AKfycbwMGELGuASNW5psE6kxgplFghh15uaiBojjixDpsdiJB_id6gTPhJyoVg0xbAg2NBBf/exec', 'STATISTIK', true)" style="background: var(--secondary);">
             <i class="fas fa-chart-simple"></i><span>Statistik</span>
         </div>
         <div class="menu-item" onclick="launch('https://script.google.com/macros/s/AKfycbwk-Z6kFcwaxBnQQQ-eXmQyJxExvcD2n0nWxZyYeAiAFJpXE5AXGNOln2ij9E-pwXJl/exec', 'FORM LAYANAN', false)" style="background: #FF9E00;">
@@ -209,12 +209,15 @@
         <div class="menu-item" onclick="launch('https://kelurahanserengan.github.io/layanan-publik/', 'INFO LAYANAN MASYARAKAT', false)" style="background: #CCC;">
             <i class="fas fa-id-card-alt"></i><span>Info Layanan Publik</span>
         </div>
+        
         <div class="menu-item" onclick="toggleAccById('anggaran-acc')" style="background: #00FF85;">
             <i class="fas fa-wallet"></i><span>Anggaran</span>
         </div>
-        <div class="menu-item" onclick="toggleAccById('lampid-acc')" style="background: #FF5E5E;">
-            <i class="fas fa-id-card"></i><span>Lampid</span>
+        
+        <div class="menu-item" onclick="launch('https://script.google.com/macros/s/AKfycbwGyw2K9tSEglkRSCZllY1mO2Df4pvcrf9gC1Fu45ciU73jWoIKecvkynujWjRY7vxx/exec', 'INFO PBB P-2', false)" style="background: #CCC;">
+            <i class="fa-circle-rupiah"></i><span>Info PBB P-2</span>
         </div>
+        
         <div class="menu-item" onclick="toggleAccById('pamong-acc')" style="background: #ADFF00;">
             <i class="fas fa-user-tie"></i><span>Pamong</span>
         </div>
@@ -298,14 +301,6 @@
             </div>
             <div class="acc-body">
                 <p>Informasi realisasi Dana Kelurahan dan Anggaran Pembangunan 2026.</p>
-            </div>
-        </div>
-        <div class="acc-card" id="lampid-acc">
-            <div class="acc-head" onclick="this.parentElement.classList.toggle('active')">
-                <span>Informasi LAMPID</span><i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="acc-body">
-                <p>Laporan Lahir, Mati, Pindah, dan Datang untuk validasi kependudukan harian.</p>
             </div>
         </div>
     </div>
