@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampung Blangkon</title>
+    <title>KAMPUNG BLANGKON - NEO BRUTALISM ULTIMATE</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #ffffff;
-            --accent: #ff3e00; /* Orange Merah yang berani */
+            --accent: #ff3e00; 
             --yellow: #ffdf00; 
             --blue: #2b59ff;
             --black: #000000;
@@ -34,6 +34,7 @@
             background-color: var(--bg);
             color: var(--black);
             padding: 20px;
+            overflow-x: hidden;
         }
 
         /* HEADER & LOGO */
@@ -43,7 +44,7 @@
             box-shadow: var(--shadow);
             padding: 80px 20px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -54,32 +55,34 @@
         }
 
         .logo {
-            width: 220px; /* Ukuran Logo diperbesar */
+            width: 280px; /* Logo jauh lebih besar sesuai permintaan */
             height: auto;
             border: var(--border);
             background: var(--white);
-            padding: 15px;
-            box-shadow: 8px 8px 0px var(--black);
+            padding: 20px;
+            box-shadow: 12px 12px 0px var(--black);
         }
 
         h1 {
             font-family: 'Archivo Black', sans-serif;
-            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
             text-transform: uppercase;
-            line-height: 0.9;
-            margin-bottom: 20px;
+            line-height: 0.85;
+            margin-bottom: 25px;
             color: var(--black);
+            letter-spacing: -2px;
         }
 
         .tagline {
             background: var(--accent);
             color: white;
             display: inline-block;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border: var(--border);
             font-weight: 900;
-            transform: skew(-10deg);
-            box-shadow: 5px 5px 0 #000;
+            transform: rotate(-2deg);
+            box-shadow: 6px 6px 0 #000;
+            font-size: 1.2rem;
         }
 
         /* CONTAINER */
@@ -88,81 +91,19 @@
         .section-title {
             margin: 60px 0 30px;
             font-family: 'Archivo Black', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-transform: uppercase;
-            -webkit-text-stroke: 1.5px var(--black);
-            color: var(--blue);
-        }
-
-        /* GRID SYSTEM */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        /* CARD STYLING */
-        .card {
-            background: var(--white);
+            background: var(--black);
+            color: var(--yellow);
+            display: inline-block;
+            padding: 10px 25px;
+            transform: skew(-5deg);
             border: var(--border);
-            box-shadow: var(--shadow);
-            cursor: zoom-in;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
         }
 
-        .card:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 15px 15px 0px var(--accent);
-        }
-
-        .card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-            transition: 0.5s;
-        }
-
-        .card-label {
-            padding: 20px;
-            background: var(--white);
-            border-top: var(--border);
-            font-family: 'Archivo Black', sans-serif;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        /* LIGHTBOX (KLIK JADI BESAR) */
-        #lightbox {
-            position: fixed;
-            z-index: 1000;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border: 10px solid white;
-            box-shadow: 20px 20px 0px var(--blue);
-            transform: scale(0.8);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        #lightbox.active { display: flex; }
-        #lightbox.active img { transform: scale(1); }
-
-        /* MAP SECTION */
+        /* MAP BOX (DIPINDAH KE ATAS) */
         .map-box {
-            margin: 80px 0;
+            margin: 40px 0 80px;
             border: var(--border);
             box-shadow: var(--shadow);
             background: var(--blue);
@@ -170,17 +111,22 @@
             color: white;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
         .map-info { flex: 1; min-width: 300px; }
-        .map-info h2 { font-family: 'Archivo Black', sans-serif; font-size: 3rem; margin-bottom: 20px; }
+        .map-info h2 { 
+            font-family: 'Archivo Black', sans-serif; 
+            font-size: 3.5rem; 
+            margin-bottom: 20px;
+            line-height: 1;
+        }
         
         .btn-maps {
             display: inline-block;
-            background: var(--yellow);
-            color: black;
+            background: var(--accent);
+            color: white;
             padding: 20px 40px;
             text-decoration: none;
             font-weight: 900;
@@ -188,11 +134,14 @@
             box-shadow: 7px 7px 0 #000;
             text-transform: uppercase;
             transition: 0.2s;
+            margin-top: 10px;
         }
 
         .btn-maps:hover {
             transform: translate(-3px, -3px);
             box-shadow: 10px 10px 0 #000;
+            background: var(--yellow);
+            color: black;
         }
 
         .map-preview {
@@ -200,25 +149,108 @@
             min-width: 300px;
             border: var(--border);
             background: white;
-            box-shadow: 8px 8px 0 #000;
+            box-shadow: 12px 12px 0 #000;
             overflow: hidden;
+            cursor: zoom-in;
+            transition: 0.3s;
         }
 
-        .map-preview img { width: 100%; display: block; filter: saturate(1.5); }
+        .map-preview:hover { transform: scale(1.02); }
+        .map-preview img { width: 100%; display: block; filter: saturate(1.8); }
 
-        footer {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: var(--border);
-            background: var(--black);
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            cursor: zoom-in;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 18px 18px 0px var(--blue);
+        }
+
+        .card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+            border-bottom: var(--border);
+        }
+
+        .card-label {
+            padding: 25px;
+            background: var(--white);
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        /* LIGHTBOX SYSTEM */
+        #lightbox {
+            position: fixed;
+            z-index: 9999;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        #lightbox img {
+            max-width: 95%;
+            max-height: 85%;
+            border: 8px solid white;
+            box-shadow: 25px 25px 0px var(--accent);
+            transform: scale(0.8);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #lightbox.active { display: flex; }
+        #lightbox.active img { transform: scale(1); }
+
+        .close-hint {
+            position: absolute;
+            top: 20px;
             color: white;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--accent);
+            padding: 5px 15px;
+            border: 3px solid white;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--black);
+            color: var(--white);
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-top: 10px solid var(--accent);
         }
 
         @media (max-width: 768px) {
-            .logo { width: 150px; }
+            .logo { width: 180px; }
             .section-title { font-size: 1.8rem; }
+            .map-info h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -229,12 +261,28 @@
             <img src="kampung_blangkon/logo_id_blangkon.png" alt="Logo" class="logo">
         </div>
         <h1>KAMPUNG<br>BLANGKON</h1>
-        <div class="tagline">POTROJAYAN - SERENGAN - SURAKARTA</div>
+        <div class="tagline">POTROJAYAN • SERENGAN • SURAKARTA</div>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">✨ Koleksi Mahkota</h2>
+        <!-- PETA DI ATAS -->
+        <div class="map-box">
+            <div class="map-info">
+                <h2>LOKASI<br>KAMI</h2>
+                <p style="margin-bottom: 30px; font-weight: 800; font-size: 1.3rem; line-height: 1.4;">Kunjungi sentra industri kreatif Blangkon terbaik di jantung Kota Surakarta.</p>
+                <a href="https://maps.app.goo.gl/d3aVhJpTDSUMpkZA7" target="_blank" class="btn-maps">BUKA GOOGLE MAPS ↗</a>
+            </div>
+            <div class="map-preview" onclick="openLightbox(this)">
+                <img src="kampung_blangkon/peta_kampung_blangkon.png" alt="Peta Potrojayan">
+            </div>
+        </div>
+
+        <!-- KOLEKSI PRODUK -->
+        <div style="text-align: center;">
+            <h2 class="section-title">👑 KOLEKSI MAHKOTA</h2>
+        </div>
+        
         <div class="gallery-grid">
             <div class="card" onclick="openLightbox(this)">
                 <img src="kampung_blangkon/blangkon_ksatria.png" alt="Blangkon Ksatria">
@@ -254,7 +302,11 @@
             </div>
         </div>
 
-        <h2 class="section-title">📂 Data Pengrajin</h2>
+        <!-- DATA PENGRAJIN -->
+        <div style="text-align: center;">
+            <h2 class="section-title">📋 DATA PENGRAJIN</h2>
+        </div>
+        
         <div class="gallery-grid">
             <div class="card" onclick="openLightbox(this)">
                 <img src="kampung_blangkon/daftar_pengrajin_blangkon.png" alt="Daftar I">
@@ -266,44 +318,33 @@
             </div>
         </div>
 
-        <!-- NEW MAP SECTION -->
-        <div class="map-box">
-            <div class="map-info">
-                <h2>KUNJUNGI KAMI</h2>
-                <p style="margin-bottom: 30px; font-weight: bold; font-size: 1.1rem;">Ayo mampir ke sentra industri kreatif Blangkon di Potrojayan, Serengan.</p>
-                <a href="https://maps.app.goo.gl/d3aVhJpTDSUMpkZA7" target="_blank" class="btn-maps">Buka Google Maps ↗</a>
-            </div>
-            <div class="map-preview">
-                <img src="kampung_blangkon/peta_kampung_blangkon.png" alt="Peta Potrojayan">
-            </div>
-        </div>
-
     </div>
 
-    <!-- LIGHTBOX ELEMENT -->
+    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox" onclick="closeLightbox()">
+        <div class="close-hint">KLIK DIMANA SAJA UNTUK MENUTUP</div>
         <img id="lightbox-img" src="" alt="Zoomed view">
     </div>
 
     <footer>
-        KELURAHAN SERENGAN &copy; 2026 - KAMPUNG BLANGKON
+        KELURAHAN SERENGAN &copy; 2026<br>KAMPUNG BLANGKON POTROJAYAN
     </footer>
 
     <script>
         function openLightbox(element) {
-            const imgSrc = element.querySelector('img').src;
+            const img = element.querySelector('img');
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             
-            lightboxImg.src = imgSrc;
+            lightboxImg.src = img.src;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop scroll
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Enable scroll
+            document.body.style.overflow = 'auto';
         }
     </script>
 
