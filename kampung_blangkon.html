@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAMPUNG BLANGKON - NEO BRUTALISM ULTIMATE</title>
+    <title>Kampung Blangkon</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -55,7 +55,7 @@
         }
 
         .logo {
-            width: 280px; /* Logo jauh lebih besar sesuai permintaan */
+            width: 280px; 
             height: auto;
             border: var(--border);
             background: var(--white);
@@ -91,7 +91,7 @@
         .section-title {
             margin: 60px 0 30px;
             font-family: 'Archivo Black', sans-serif;
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             text-transform: uppercase;
             background: var(--black);
             color: var(--yellow);
@@ -101,7 +101,7 @@
             border: var(--border);
         }
 
-        /* MAP BOX (DIPINDAH KE ATAS) */
+        /* MAP BOX */
         .map-box {
             margin: 40px 0 80px;
             border: var(--border);
@@ -161,9 +161,9 @@
         /* GALLERY GRID */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .card {
@@ -189,10 +189,10 @@
         }
 
         .card-label {
-            padding: 25px;
+            padding: 20px;
             background: var(--white);
             font-family: 'Archivo Black', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
             color: var(--black);
         }
@@ -242,14 +242,14 @@
             background: var(--black);
             color: var(--white);
             font-weight: 900;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             border-top: 10px solid var(--accent);
         }
 
         @media (max-width: 768px) {
             .logo { width: 180px; }
-            .section-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
             .map-info h2 { font-size: 2.5rem; }
         }
     </style>
@@ -302,19 +302,19 @@
             </div>
         </div>
 
-        <!-- DATA PENGRAJIN -->
+        <!-- DATA PENGRAJIN (DIJADIKAN SATU BARIS) -->
         <div style="text-align: center;">
             <h2 class="section-title">📋 DATA PENGRAJIN</h2>
         </div>
         
-        <div class="gallery-grid">
+        <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));">
             <div class="card" onclick="openLightbox(this)">
                 <img src="kampung_blangkon/daftar_pengrajin_blangkon.png" alt="Daftar I">
-                <div class="card-label">Daftar Pengrajin I</div>
+                <div class="card-label">Daftar Pengrajin Bagian I</div>
             </div>
             <div class="card" onclick="openLightbox(this)">
                 <img src="kampung_blangkon/daftar_pengrajin_blangkon2.png" alt="Daftar II">
-                <div class="card-label">Daftar Pengrajin II</div>
+                <div class="card-label">Daftar Pengrajin Bagian II</div>
             </div>
         </div>
 
