@@ -1,1 +1,256 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMPUNG BLANGKON - NEO BRUTALISM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f3f3f3;
+            --accent: #ffdf00; /* Kuning cerah khas Neo-Brutalism */
+            --blue: #2b59ff;
+            --black: #000000;
+            --white: #ffffff;
+            --border: 4px solid #000000;
+            --shadow: 8px 8px 0px #000000;
+            --shadow-hover: 4px 4px 0px #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--black);
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--blue);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            max-width: 120px;
+            border: var(--border);
+            background: var(--white);
+            padding: 10px;
+            margin-bottom: 20px;
+            transform: rotate(-3deg);
+        }
+
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: var(--white);
+            -webkit-text-stroke: 2px var(--black);
+            text-shadow: 4px 4px 0 var(--black);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            background: var(--accent);
+            display: inline-block;
+            padding: 5px 15px;
+            border: var(--border);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* PETA SECTION (DIPISAH) */
+        .map-section {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .map-container {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%) contrast(120%);
+            transition: 0.3s;
+        }
+
+        .map-container img:hover {
+            filter: grayscale(0%);
+        }
+
+        .map-label {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--blue);
+            color: white;
+            padding: 10px 20px;
+            border: var(--border);
+            font-weight: 900;
+            transform: rotate(2deg);
+        }
+
+        /* CONTAINER UTAMA */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            background: var(--accent);
+            display: inline-block;
+            padding: 10px 20px;
+            border: var(--border);
+            box-shadow: 5px 5px 0 var(--black);
+        }
+
+        /* GRID GALERI */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translate(4px, 4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: var(--border);
+        }
+
+        .card-info {
+            padding: 20px;
+            background: var(--white);
+            flex-grow: 1;
+        }
+
+        .card-info h3 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: var(--border);
+            margin-top: 50px;
+            padding: 40px;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            body { padding: 10px; }
+            .map-label { position: static; transform: none; text-align: center; border-left: 0; border-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="kampung_blangkon/logo_id_blangkon.png" alt="Logo" class="logo">
+        <h1>KAMPUNG BLANGKON</h1>
+        <p>Potrojayan - Serengan - Surakarta</p>
+    </header>
+
+    <div class="map-section">
+        <div class="section-header">
+            <h2>LOKASI KAMI</h2>
+        </div>
+        <div class="map-container">
+            <img src="kampung_blangkon/peta_kampung_blangkon.png" alt="Peta Lokasi Kampung Blangkon">
+            <div class="map-label">PETA POTROJAYAN</div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="section-header">
+            <h2>KOLEKSI PRODUK</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="kampung_blangkon/blangkon_ksatria.png" alt="Blangkon Ksatria">
+                <div class="card-info"><h3>KSATRIA</h3></div>
+            </div>
+            <div class="card">
+                <img src="kampung_blangkon/blangkon_ngayogyakarta.png" alt="Blangkon Ngayogyakarta">
+                <div class="card-info"><h3>NGAYOGYAKARTA</h3></div>
+            </div>
+            <div class="card">
+                <img src="kampung_blangkon/blangkon_penganten.png" alt="Blangkon Penganten">
+                <div class="card-info"><h3>PENGANTEN</h3></div>
+            </div>
+            <div class="card">
+                <img src="kampung_blangkon/blangkon_perbawan.png" alt="Blangkon Perbawan">
+                <div class="card-info"><h3>PERBAWAN</h3></div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>INFO PENGRAJIN</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="kampung_blangkon/daftar_pengrajin_blangkon.png" alt="Daftar Pengrajin 1">
+                <div class="card-info"><h3>DAFTAR PENGRAJIN I</h3></div>
+            </div>
+            <div class="card">
+                <img src="kampung_blangkon/daftar_pengrajin_blangkon2.png" alt="Daftar Pengrajin 2">
+                <div class="card-info"><h3>DAFTAR PENGRAJIN II</h3></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        KELURAHAN SERENGAN &copy; 2026 - KAMPUNG BLANGKON
+    </footer>
+
+</body>
+</html>
