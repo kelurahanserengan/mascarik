@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampung Blangkon</title>
+    <title>Kampung Blangkon - Potrojayan</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -85,7 +85,6 @@
             font-size: 1.2rem;
         }
 
-        /* CONTAINER */
         .container { max-width: 1300px; margin: 0 auto; }
 
         .section-title {
@@ -155,7 +154,6 @@
             transition: 0.3s;
         }
 
-        .map-preview:hover { transform: scale(1.02); }
         .map-preview img { width: 100%; display: block; filter: saturate(1.8); }
 
         /* GALLERY GRID */
@@ -173,6 +171,7 @@
             cursor: zoom-in;
             transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
@@ -180,12 +179,15 @@
             box-shadow: 18px 18px 0px var(--blue);
         }
 
+        /* PERBAIKAN: Agar gambar koleksi tidak terpotong */
         .card img {
             width: 100%;
             height: 380px;
-            object-fit: cover;
+            object-fit: contain; /* Gambar utuh, tidak terpotong */
+            background-color: #f9f9f9;
             display: block;
             border-bottom: var(--border);
+            padding: 10px;
         }
 
         .card-label {
@@ -195,6 +197,14 @@
             font-size: 1.2rem;
             text-transform: uppercase;
             color: var(--black);
+        }
+
+        /* KHUSUS DAFTAR PENGRAJIN */
+        .pengrajin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Tampilan Desktop: 2 kolom */
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         /* LIGHTBOX SYSTEM */
@@ -235,7 +245,6 @@
             border: 3px solid white;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 100px 20px;
@@ -247,10 +256,20 @@
             border-top: 10px solid var(--accent);
         }
 
+        /* PERBAIKAN: Media Query untuk Mobile */
         @media (max-width: 768px) {
             .logo { width: 180px; }
             .section-title { font-size: 1.6rem; }
             .map-info h2 { font-size: 2.5rem; }
+            
+            /* Pengrajin jadi full lebar di HP agar teks terbaca */
+            .pengrajin-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card img {
+                height: auto; /* Biar proporsional di HP */
+            }
         }
     </style>
 </head>
@@ -266,7 +285,7 @@
 
     <div class="container">
         
-        <!-- PETA DI ATAS -->
+        <!-- PETA -->
         <div class="map-box">
             <div class="map-info">
                 <h2>LOKASI<br>KAMI</h2>
@@ -302,12 +321,12 @@
             </div>
         </div>
 
-        <!-- DATA PENGRAJIN (DIJADIKAN SATU BARIS) -->
+        <!-- DATA PENGRAJIN -->
         <div style="text-align: center;">
             <h2 class="section-title">📋 DATA PENGRAJIN</h2>
         </div>
         
-        <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));">
+        <div class="pengrajin-grid">
             <div class="card" onclick="openLightbox(this)">
                 <img src="kampung_blangkon/daftar_pengrajin_blangkon.png" alt="Daftar I">
                 <div class="card-label">Daftar Pengrajin Bagian I</div>
@@ -320,7 +339,7 @@
 
     </div>
 
-    <!-- LIGHTBOX OVERLAY -->
+    <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <div class="close-hint">KLIK DIMANA SAJA UNTUK MENUTUP</div>
         <img id="lightbox-img" src="" alt="Zoomed view">
